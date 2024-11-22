@@ -50,10 +50,17 @@ public class Cache {
 
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("       |   Tag 1   ||   Tag 2   ||   Tag 3   ||   Tag 4   |\n");
-        sb.append("-----------------------------------------------------------\n");
+        sb.append("        ");
+        for (int i = 0; i < waySize; i++) {
+            sb.append(String.format("|   Tag %02d  |", i));
+        }
+        sb.append("\n--------");
+        for (int i = 0; i < waySize; i++) {
+            sb.append("-------------");
+        }
+        sb.append("\n");
         for (int i = 0; i < setSize; i++) {
-            sb.append("Set ").append(i).append(": ").append(sets[i]).append("\n");
+            sb.append("Set ").append(String.format("%02d",i)).append(": ").append(sets[i]).append("\n");
         }
         return sb.toString();
     }
